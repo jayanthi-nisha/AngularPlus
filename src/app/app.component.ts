@@ -40,4 +40,27 @@ clearSessionStorage() {
     sessionStorage.clear();
 }
 
+//Format the Phone number with slash
+  FormatPhoneNumber(phonenumber: string) {
+  if (phonenumber != undefined && phonenumber != '') {
+        phonenumber = phonenumber.split('-').join('').split('_').join('');
+      phonenumber = phonenumber.substr(0, 3) + '-' + phonenumber.substr(3);
+      phonenumber = phonenumber.substr(0, 7) + '-' + phonenumber.substr(7);
+  }
+  return phonenumber;
+}
+
+//Format the SSN number
+FormatSSN(ssn: string) {
+  let a = 5;
+  let b;
+  if (ssn != undefined && ssn.trim() != '') {
+      ssn = ssn.replace('-', '').replace('-', '').replace('-', '');
+      ssn = ssn.substr(0, 3) + '-' + ssn.substr(3);
+      ssn = ssn.substr(0, 6) + '-' + ssn.substr(6);
+  }
+  return ssn;
+
+}
+
 }
